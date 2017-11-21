@@ -3,6 +3,8 @@ var volumeDown = require('./lib/volumeDown.js');
 var stop = require('./lib/stop.js');
 var start = require('./lib/start.js');
 var command = require('./lib/lgwebos.command.js');
+var install = require('./lib/install.js');
+var uninstall = require('./lib/uninstall.js');
 	
 module.exports = function(sails) {
 
