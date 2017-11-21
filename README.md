@@ -43,27 +43,11 @@ LGTV_MAC_ADRESS=00:00:00:00:00:00
 ```
 
 
-#### Add sentences to the database
-
-```
-mysql -uroot -proot
-```
-
-```
-use gladys;
-```
-
-```
-insert into sentence(text, label, service, language, status) values('Gladys éteins la télé', 'tv-off', 'lgwebos', 'fr', 'approved');
-insert into sentence(text, label, service, language, status) values('Gladys allume la télé', 'tv-on', 'lgwebos', 'fr', 'approved');
-insert into sentence(text, label, service, language, status) values('Gladys augmente le son de la télé', 'tv-up', 'lgwebos', 'fr', 'approved');
-insert into sentence(text, label, service, language, status) values('Gladys diminue le son de la télé', 'tv-down', 'lgwebos', 'fr', 'approved');
-```
 
 #### Install the hook on gladys
 
 Nom : lgwebos 
-Version : 0.0.1 
+Version : 0.0.2 
 URL git : https://github.com/TanguyNa/gladys-lgwebos
 slug : lgwebos
 
@@ -71,6 +55,17 @@ slug : lgwebos
 #### Restart Gladys
 
 #### Train the Brain
+
+In french language, sentences are :
+Eteins la télé
+Allume la télé
+Augmente le son de la télé
+Diminue le son de la télé
+For other language :
+Turn off TV
+Turn on TV
+Increase the sound of the TV
+Decrease the sound of the TV
 
 #### On the first use watch your tv screen to allow the hook to connect to it.
 
