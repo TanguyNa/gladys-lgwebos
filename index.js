@@ -11,6 +11,8 @@ module.exports = function(sails) {
 		volumeDown: volumeDown,
 		stop: stop,
 		start: start,
-		command: command
+		command: command,
+		install: install,
+		uninstall: uninstall
 	};
 };
