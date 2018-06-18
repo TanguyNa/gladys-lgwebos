@@ -1,16 +1,4 @@
-var volumeUp = require('./lib/volumeUp.js');
-var volumeDown = require('./lib/volumeDown.js');
-var stop = require('./lib/stop.js');
-var mediaControl = require('./lib/mediaControl')
-var setMute = require('./lib/setMute')
-var getAudioStatus = require('./lib/getAudioStatus')
-var launchApp = require('./lib/launchApp')
-var getAppStatus = require('./lib/getAppStatus')
-var notification = require('./lib/notification')
-var openChannel = require('./lib/openChannel')
-var getServiceList = require('./lib/getServiceList')
-var getSoftwareInformation = require('./lib/getSoftwareInformation')
-var start = require('./lib/start.js');
+var commandsList = require('./lib/commandsList')
 var command = require('./lib/lgwebos.command.js');
 var install = require('./lib/install.js');
 var uninstall = require('./lib/uninstall.js');
@@ -18,19 +6,19 @@ var uninstall = require('./lib/uninstall.js');
 module.exports = function(sails) {
 
 	return {
-		volumeUp: volumeUp,
-		volumeDown: volumeDown,
-		stop: stop,
-		start: start,
-		mediaControl: mediaControl,
-		setMute: setMute,
-		getAudioStatus: getAudioStatus,
-		launchApp: launchApp,
-		getAppStatus: getAppStatus,
-		notification: notification,
-		openChannel: openChannel,
-		getServiceList: getServiceList,
-		getSoftwareInformation: getSoftwareInformation,
+		volumeUp: commandsList.volumeUp,
+		volumeDown: commandsList.volumeDown,
+		stop: commandsList.stop,
+		start: commandsList.start,
+		mediaControl: commandsList.mediaControl,
+		setMute: commandsList.setMute,
+		getAudioStatus: commandsList.getAudioStatus,
+		launchApp: commandsList.launchApp,
+		getAppStatus: commandsList.getAppStatus,
+		notification: commandsList.notification,
+		openChannel: commandsList.openChannel,
+		getServiceList: commandsList.getServiceList,
+		getSoftwareInformation: commandsList.getSoftwareInformation,
 		command: command,
 		install: install,
 		uninstall: uninstall
