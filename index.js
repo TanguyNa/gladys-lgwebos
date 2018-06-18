@@ -4,6 +4,8 @@ var stop = require('./lib/stop.js');
 var mediaControl = require('./lib/mediaControl')
 var setMute = require('./lib/setMute')
 var getAudioStatus = require('./lib/getAudioStatus')
+var launchApp = require('./lib/launchApp')
+var getAppStatus = require('./lib/getAppStatus')
 var start = require('./lib/start.js');
 var command = require('./lib/lgwebos.command.js');
 var install = require('./lib/install.js');
@@ -19,6 +21,8 @@ module.exports = function(sails) {
 		mediaControl: mediaControl,
 		setMute: setMute,
 		getAudioStatus: getAudioStatus,
+		launchApp: launchApp,
+		getAppStatus: getAppStatus,
 		command: command,
 		install: install,
 		uninstall: uninstall
