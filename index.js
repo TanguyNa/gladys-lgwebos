@@ -1,4 +1,4 @@
-var commandsList = require('./lib/commandsList')
+var commandsList = require('./lib/commandsList/commandsList')
 var command = require('./lib/lgwebos.command.js');
 var install = require('./lib/install.js');
 var uninstall = require('./lib/uninstall.js');
