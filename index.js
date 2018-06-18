@@ -8,6 +8,8 @@ var launchApp = require('./lib/launchApp')
 var getAppStatus = require('./lib/getAppStatus')
 var notification = require('./lib/notification')
 var openChannel = require('./lib/openChannel')
+var getServiceList = require('./lib/getServiceList')
+var getSoftwareInformation = require('./lib/getSoftwareInformation')
 var start = require('./lib/start.js');
 var command = require('./lib/lgwebos.command.js');
 var install = require('./lib/install.js');
@@ -27,6 +29,8 @@ module.exports = function(sails) {
 		getAppStatus: getAppStatus,
 		notification: notification,
 		openChannel: openChannel,
+		getServiceList: getServiceList,
+		getSoftwareInformation: getSoftwareInformation,
 		command: command,
 		install: install,
 		uninstall: uninstall
