@@ -2,7 +2,8 @@ var commandsList = require('./lib/commandsList')
 var command = require('./lib/lgwebos.command.js');
 var install = require('./lib/install.js');
 var uninstall = require('./lib/uninstall.js');
-	
+var exec = require('./lib/exec');
+
 module.exports = function(sails) {
 
 	return {
@@ -21,6 +22,7 @@ module.exports = function(sails) {
 		getSoftwareInformation: commandsList.getSoftwareInformation,
 		command: command,
 		install: install,
+		exec: exec,
 		uninstall: uninstall
 	};
 };
