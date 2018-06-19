@@ -4,6 +4,22 @@ var install = require('./lib/install.js');
 var uninstall = require('./lib/uninstall.js');
 var exec = require('./lib/exec');
 
+gladys.on('ready', function() {
+		gladys.param.getValue('LGWEBOS_INTERVAL_UPDATE')
+	    .then((intervalUser) => {
+	        return intervalUser;
+	    })
+	    .catch(() => {
+	        return 30;
+	    })
+	    .then((interval) => {
+			setInterval(function () {
+				sails.log.info('Update LG WEBOS data !')
+				commandsList.getAudioStatus
+			}, interval*60000)
+	    })
+	})
+
 module.exports = function(sails) {
 
 	return {
