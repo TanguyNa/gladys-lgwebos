@@ -6,8 +6,10 @@ var exec = require('./lib/exec');
 var updateDeviceTypes = require('./lib/updateDeviceTypes')
 
 gladys.on('ready', function() {
-		updateDeviceTypes()
-		commandsList.getAudioStatus()
+	gladys.param.getValue('LGTV_MAC_ADRESS')
+    .then((macAdress) => {
+    	commandsList.getAudioStatus()
+	    updateDeviceTypes({'macAdress':macAdress})
 		gladys.param.getValue('LGWEBOS_INTERVAL_UPDATE')
 	    .then((intervalUser) => {
 	        return intervalUser;
@@ -19,10 +21,11 @@ gladys.on('ready', function() {
 			setInterval(function () {
 				sails.log.info('Update LG WEBOS data !')
 				commandsList.getAudioStatus()
-				updateDeviceTypes()
+			    updateDeviceTypes({'macAdress':macAdress})
 			}, interval*60000)
 	    })
 	})
+})
 
 module.exports = function(sails) {
 
