@@ -3,9 +3,11 @@ var command = require('./lib/lgwebos.command.js');
 var install = require('./lib/install.js');
 var uninstall = require('./lib/uninstall.js');
 var exec = require('./lib/exec');
-var updateDeviceType = require('./lib/updateDeviceType')
+var updateDeviceTypes = require('./lib/updateDeviceTypes')
 
 gladys.on('ready', function() {
+		updateDeviceTypes()
+		commandsList.getAudioStatus()
 		gladys.param.getValue('LGWEBOS_INTERVAL_UPDATE')
 	    .then((intervalUser) => {
 	        return intervalUser;
@@ -16,8 +18,8 @@ gladys.on('ready', function() {
 	    .then((interval) => {
 			setInterval(function () {
 				sails.log.info('Update LG WEBOS data !')
-				commandsList.getAudioStatus
-				updateDeviceType
+				commandsList.getAudioStatus()
+				updateDeviceTypes()
 			}, interval*60000)
 	    })
 	})
