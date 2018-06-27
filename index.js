@@ -8,7 +8,6 @@ var updateDeviceTypes = require('./lib/updateDeviceTypes')
 gladys.on('ready', function() {
 	gladys.param.getValue('LGTV_MAC_ADRESS')
     .then((macAdress) => {
-    	commandsList.getAudioStatus()
 	    updateDeviceTypes({'macAdress':macAdress})
 		gladys.param.getValue('LGWEBOS_INTERVAL_UPDATE')
 	    .then((intervalUser) => {
@@ -20,8 +19,17 @@ gladys.on('ready', function() {
 	    .then((interval) => {
 			setInterval(function () {
 				sails.log.info('Update LG WEBOS data !')
-				commandsList.getAudioStatus()
-			    updateDeviceTypes({'macAdress':macAdress})
+				updateDeviceTypes({'macAdress':macAdress})
+				gladys.utils.sqlUnique( 
+                    'SELECT ds.value FROM devicetype dt INNER JOIN devicestate ds ON dt.id=ds.devicetype WHERE dt.identifier = ? ORDER BY ds.createdAt DESC LIMIT 1 ;', 
+                    [ 'LGPower' ]
+                )
+                .then((row) => {
+					if(row.value === 1) 
+					{
+						commandsList.getAudioStatus()
+					}
+				})
 			}, interval*60000)
 	    })
 	})
