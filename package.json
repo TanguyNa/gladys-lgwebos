@@ -14,7 +14,9 @@
   "author": "@TanguyNa",
   "license": "CC-BY-NC-SA-3.0",
   "dependencies": {
-  "lgtv2":"^1.4.1"
+  "lgtv2":"^1.4.1",
+  "ping":"^0.2.2",
+  "shelljs":"^0.8.2"
   }
 
 }
