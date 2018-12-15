@@ -17,7 +17,7 @@ This hook add the possibility to Gladys to shutdown, turnon, change volume, chan
 Prerequisites
 -------------
 
-- [Gladys](http://gladysproject.com) ( tested with v3.7.1 )
+- [Gladys](http://gladysproject.com) ( tested with v3.11.6 )
 
 To support Wake on Lan to turn on the tv 
 ```
@@ -48,6 +48,15 @@ LGWEBOS_INTERVAL_UPDATE=10
 ```
 In this case Gladys check TV each 10 minutes to update the device on Gladys
 If this parameter is not set Gladys check each 30 minutes by default
+
+These parameters can overload these four methods that start some application by default:
+
+| Method | Default App | Optional parameter to overload default App |
+|--|--|--|
+| redButton | Netflix | LGWEBOS_RED_BUTTON_APP |
+| greenButton | Youtube Kid | LGWEBOS_GREEN_BUTTON_APP |
+| yellowButton | Youtube | LGWEBOS_YELLOW_BUTTON_APP |
+| blueButton | Smart IPTV | LGWEBOS_BLUE_BUTTON_APP |
 
 
 #### Install the hook on gladys
