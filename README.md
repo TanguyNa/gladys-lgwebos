@@ -62,7 +62,7 @@ These parameters can overload these four methods that start some application by 
 #### Install the hook on gladys
 
 Nom : lgwebos 
-Version : 0.0.3 
+Version : 0.0.4 
 URL git : https://github.com/TanguyNa/gladys-lgwebos
 slug : lgwebos
 
@@ -83,6 +83,7 @@ In french language, sentences are :
 - Retour rapide sur la télé
 - Avance rapide sur la télé
 - Lance l'application %app%*
+
 For other language :
 - Turn off TV
 - Turn on TV
