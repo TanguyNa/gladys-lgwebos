@@ -21,8 +21,8 @@ gladys.on('ready', function() {
 				sails.log.info('Update LG WEBOS data !')
 				updateDeviceTypes({'macAdress':macAdress})
 				gladys.utils.sqlUnique( 
-                    'SELECT ds.value FROM devicetype dt INNER JOIN devicestate ds ON dt.id=ds.devicetype WHERE dt.identifier = ? ORDER BY ds.createdAt DESC LIMIT 1 ;', 
-                    [ 'LGPower' ]
+                    'SELECT ds.value FROM devicetype dt INNER JOIN devicestate ds ON dt.id=ds.devicetype INNER JOIN device d on dt.device=d.id WHERE dt.identifier = ? and d.service= ? ORDER BY ds.createdAt DESC LIMIT 1 ;', 
+                    [ 'Power', 'lgwebos' ]
                 )
                 .then((row) => {
 					if(row.value === 1) 
@@ -38,19 +38,7 @@ gladys.on('ready', function() {
 module.exports = function(sails) {
 
 	return {
-		volumeUp: commandsList.volumeUp,
-		volumeDown: commandsList.volumeDown,
-		stop: commandsList.stop,
-		start: commandsList.start,
-		mediaControl: commandsList.mediaControl,
-		setMute: commandsList.setMute,
-		getAudioStatus: commandsList.getAudioStatus,
-		launchApp: commandsList.launchApp,
-		getAppStatus: commandsList.getAppStatus,
-		notification: commandsList.notification,
-		openChannel: commandsList.openChannel,
-		getServiceList: commandsList.getServiceList,
-		getSoftwareInformation: commandsList.getSoftwareInformation,
+		television: commandsList,
 		command: command,
 		install: install,
 		exec: exec,
